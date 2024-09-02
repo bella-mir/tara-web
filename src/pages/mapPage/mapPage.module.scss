@@ -1,0 +1,11 @@
+.card {
+  max-height: 200px;
+  display: block;
+  overflow: auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

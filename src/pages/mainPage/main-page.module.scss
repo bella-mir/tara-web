@@ -1,0 +1,130 @@
+.main {
+  background: linear-gradient(rgba(186, 160, 160, 0.2), rgba(68, 61, 61, 1)),
+    url("../../asserts/tara_picture.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // color: rgb(147, 149, 152);
+  height: calc(100vh - 160px);
+  // border-radius: 20px;
+}
+
+.text {
+  position: relative;
+  color: white;
+  z-index: 100;
+  align-items: center;
+  text-align: center;
+}
+
+.buttonLink {
+  font-size: 18px;
+  border: 1.5px solid #ffffff;
+  border-radius: 48px;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.buttonLink:hover {
+  color: white;
+  border: 2px solid #4faa66;
+}
+
+.image {
+  width: 100%;
+}
+
+.blockTitle {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: black;
+  // padding-bottom: 20px;
+}
+
+.block {
+  // margin-top: 100px;
+  // background-color: green;
+}
+
+.blockText {
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 54px;
+}
+
+.subtitle {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.slide {
+  // background-color: #79b0d7;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blockAbout {
+  // background-color: #4faa66;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  .card {
+    background-color: #dfedfa;
+    border-radius: 20px;
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 460px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .cardTime {
+      align-self: end;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .cardTitle {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cardDescription {
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1020px) {
+  .main {
+    // background-size: 80%;
+  }
+  .title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    // background-size: 60%;
+  }
+}
+
+@media (max-width: 680px) {
+  .main {
+    background: none;
+    place-items: center;
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  padding: 5rem 2rem 2rem;
+  overflow: auto;
+  align-items: top;
+  background-color: #fafafa;
+  min-height: 100vh;
+  width: calc(100vw);
+  margin-left: -8px;
+  box-sizing: border-box;
+
+  .inside {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
