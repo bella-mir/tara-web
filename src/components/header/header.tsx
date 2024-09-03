@@ -9,6 +9,7 @@ import { HamburgerMenu } from "./components/hamburgerMenu/hamburgerMenu";
 export const Header = ({ title, menu }: IHeaderProps) => {
   const navStyle = ({ isActive }: { isActive: boolean }) => ({
     fontWeight: isActive ? "600" : "400",
+    // color: isActive ?  "#815836" : ""
   });
   const size = useWindowSize();
 

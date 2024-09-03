@@ -50,6 +50,11 @@
 .blockText {
   font-size: 18px;
   margin-bottom: 2rem;
+  max-width: 50vw;
+}
+
+.mediaIcon {
+  width: 40px;
 }
 
 .title {
@@ -142,9 +147,24 @@
   }
 }
 
+.rowSocials {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 .card:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mediaIcon {
+  width: 50px;
 }
 
 @media (max-width: 1020px) {

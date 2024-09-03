@@ -4,6 +4,8 @@ import styles from "./main-page.module.scss";
 import { STAGES } from "./main-page-constants";
 import { About } from "./about";
 import { CheckCircleFilled } from "@ant-design/icons";
+import vk from "../../asserts/logos/vk_blue.svg";
+import tg from "../../asserts/logos/tg_blue.svg";
 
 export const MainPage = () => {
   return (
@@ -112,26 +114,32 @@ export const MainPage = () => {
         </div>
       </Container>
       <Container className={styles.blockStages}>
-        <h2 className={styles.blockTitle}>Социальные Сети</h2>
-        <div className={styles.block}>
-          <h3>Подписаться на социальные сети проекта</h3>
+        <h2 className={styles.blockTitle}>Обратная связь</h2>
+        <h3>Социальные сети</h3>
+
+        <div className={styles.rowSocials}>
           <p className={styles.blockText}>
             Подпишитесь на наши социальные сети, чтобы быть в курсе событий
             проекта и узнавать о публикациях исследований, итогов публичных
             встреч и других материалов проекта:
           </p>
+          <div className={styles.links}>
+            <Link to="https://vk.com/tara_strategy" target="_blank">
+              <img src={vk} alt="Vk Logo" className={styles.mediaIcon} />
+            </Link>
+            <Link to="https://t.me/tara_strategy" target="_blank">
+              <img src={tg} alt="TG Logo" className={styles.mediaIcon} />
+            </Link>
+          </div>
         </div>
-      </Container>
-
-      <Container className={styles.blockStages}>
-        <h2 className={styles.blockTitle}>Остались вопросы?</h2>
+        <h3>Остались вопросы?</h3>
         <div className={styles.block}>
           <p className={styles.blockText}>
             Если у вас остались вопросы или появились предложения, напишите нам
-            на почту gorodreshaet@gmail.com В теме письма напишите «Для
-            мастер-плана Тары», в самом письме представьтесь, укажите ваши ФИО,
-            номер телефона (или другой удобный способ связи с вами) и опишите
-            подробно ваш вопрос или предложение.
+            на почту <strong>gorodreshaet@gmail.com</strong>. В теме письма
+            напишите «Для мастер-плана Тары», в самом письме представьтесь,
+            укажите ваши ФИО, номер телефона (или другой удобный способ связи с
+            вами) и опишите подробно ваш вопрос или предложение.
           </p>
         </div>
       </Container>
