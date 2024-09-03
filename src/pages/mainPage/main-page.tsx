@@ -3,6 +3,7 @@ import { Container, Slider, Timeline } from "../../components";
 import styles from "./main-page.module.scss";
 import { STAGES } from "./main-page-constants";
 import { About } from "./about";
+import { CheckCircleFilled } from "@ant-design/icons";
 
 export const MainPage = () => {
   return (
@@ -43,20 +44,45 @@ export const MainPage = () => {
         <div className={styles.block}>
           <h2 className={styles.blockTitle}>Участие в проекте</h2>
           <h3>Кто может участвовать в открытых мероприятиях проекта?</h3>
-          <ul className={styles.blockText}>
-            <li>жители Тары и их объединения </li>
-            <li>предприниматели</li>
-            <li>представители крупного, среднего и малого бизнеса</li>
-            <li>
-              местные эксперты и хранители: краеведы, архитекторы, экологи,
-              дизайнеры, менеджеры культуры, художники, археологи,
-              реконструкторы, актеры, режиссеры, экономисты и др.
+          <ul className={styles.blockList}>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>жители Тары и их объединения</span>
             </li>
-            <li>
-              культурные институции, некоммерческие организации и активисты
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span> предприниматели</span>
             </li>
-            <li>учителя и преподаватели школ, колледжей и ВУЗов</li>
-            <li>администрации города и района, управляющие организации</li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>представители крупного, среднего и малого бизнеса</span>
+            </li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>местные эксперты и хранители</span>
+
+              {/* <p className={styles.blockListAdd}>
+                краеведы, архитекторы, экологи, дизайнеры, менеджеры культуры,
+                художники, археологи, реконструкторы, актеры, режиссеры,
+                экономисты и др.
+              </p> */}
+            </li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>культурные институции</span>
+            </li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>некоммерческие организации, активисты</span>
+            </li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>учителя и преподаватели школ, колледжей и ВУЗов</span>
+            </li>
+            <li className={styles.listElement}>
+              <CheckCircleFilled style={{ color: "#4faa66" }} />
+              <span>администрации города и района</span>
+            </li>
           </ul>
           <h3>Как тарчане могут высказать свое мнение?</h3>
           <div className={styles.cards}>
@@ -67,6 +93,7 @@ export const MainPage = () => {
                 Результаты будут опубликованы и использованы для составления
                 задания на разработку мастер-плана
               </span>
+              <div className={styles.cardButton}>Пройти опрос</div>
             </div>
             <div className={styles.card}>
               <span className={styles.cardTime}>9 сентября – 23 октября</span>
@@ -79,21 +106,26 @@ export const MainPage = () => {
                 Результаты будут опубликованы и использованы для составления
                 задания на разработку мастер-плана
               </span>
+              <div className={styles.cardButton}>Предложить идеи</div>
             </div>
           </div>
         </div>
       </Container>
       <Container className={styles.blockStages}>
+        <h2 className={styles.blockTitle}>Социальные Сети</h2>
         <div className={styles.block}>
-          <h2 className={styles.blockTitle}>Обратная связь</h2>
-          <div className={styles.block}>
-            <h3>Подписаться на социальные сети проекта</h3>
-            <p className={styles.blockText}>
-              Подпишитесь на наши социальные сети, чтобы быть в курсе событий
-              проекта и узнавать о публикациях исследований, итогов публичных
-              встреч и других материалов проекта:
-            </p>
-          </div>
+          <h3>Подписаться на социальные сети проекта</h3>
+          <p className={styles.blockText}>
+            Подпишитесь на наши социальные сети, чтобы быть в курсе событий
+            проекта и узнавать о публикациях исследований, итогов публичных
+            встреч и других материалов проекта:
+          </p>
+        </div>
+      </Container>
+
+      <Container className={styles.blockStages}>
+        <h2 className={styles.blockTitle}>Остались вопросы?</h2>
+        <div className={styles.block}>
           <p className={styles.blockText}>
             Если у вас остались вопросы или появились предложения, напишите нам
             на почту gorodreshaet@gmail.com В теме письма напишите «Для

@@ -77,6 +77,7 @@
 .cards {
   display: flex;
   gap: 2rem;
+  margin-top: 24px;
   .card {
     background-color: #dfedfa;
     border-radius: 20px;
@@ -91,14 +92,53 @@
       align-self: end;
       margin-bottom: 1rem;
       font-style: italic;
+      font-size: 14px;
     }
     .cardTitle {
       text-transform: uppercase;
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    .cardDescription {
+    .cardButton {
+      width: 100;
+      background-color: #4faa66;
+      color: white;
+      align-self: flex-end;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin-top: auto;
     }
+  }
+}
+
+.blockList {
+  // list-style-image: url(../../asserts/ok_icon.svg);
+  list-style-type: none;
+  font-size: 24px;
+  columns: 2;
+  column-width: 460px;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
+  margin-bottom: 4rem;
+
+  .listElement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  // li::marker {
+  //   font-size: 3rem;
+  //   padding-right: 1rem;
+  // }
+  li {
+    align-content: center;
+    line-height: 3rem;
+  }
+  .blockListAdd {
+    font-size: 18px;
+    margin-top: 0;
   }
 }
 
