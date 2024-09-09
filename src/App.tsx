@@ -1,13 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { BackToTop, Footer, Header } from "./components";
+import { Footer, Header } from "./components";
 import {
-  FaqPage,
   FormPage,
   IdeasPage,
   LoginPage,
   MainPage,
-  MapPage,
   AdminPage,
+  MapFinalPage,
 } from "./pages";
 import { ProtectedRoute } from "./modules";
 import { MENU, TITLE } from "./utils";
@@ -22,14 +21,12 @@ function App() {
           element={
             <>
               <MainPage /> <Footer />
-              {/* <BackToTop /> */}
             </>
           }
         />
         <Route path="/ideas" element={<IdeasPage />} />
-        <Route path="/map" element={<MapPage />} />
+        <Route path="/map" element={<MapFinalPage />} />
         <Route path="/form" element={<FormPage />} />
-        <Route path="/faq" element={<FaqPage />} />
         <Route path="/admin/login" element={<LoginPage />} />
         <Route
           path="/admin"

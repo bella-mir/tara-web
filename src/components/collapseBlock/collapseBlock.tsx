@@ -19,7 +19,7 @@ export const CollapsibleBlock: React.FC<CollapsibleBlockProps> = ({
   return (
     <div className={styles.collapsible}>
       <div className={styles.collapsibleHeader} onClick={toggleCollapse}>
-        {header}
+        <span className={styles.title}>{header}</span>
       </div>
       <div
         className={styles.collapsibleContent}

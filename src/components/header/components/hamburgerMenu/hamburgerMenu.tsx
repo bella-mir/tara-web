@@ -8,7 +8,7 @@ export const HamburgerMenu = ({ menu }: { menu: IMenuElement[] }) => {
   const [buttonPosition, setButtonPosition] = useState<any>("absolute");
 
   const navStyle = ({ isActive }: { isActive: boolean }) => ({
-    textDecoration: isActive ? "underline" : "none",
+    textDecoration: isActive ? "none" : "none",
   });
 
   const handleChange = (event: any) => {

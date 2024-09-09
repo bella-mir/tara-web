@@ -6,3 +6,4 @@ export { IdeasPage } from "./ideasPage";
 export { FormPage } from "./formPage";
 export { LoginPage } from "./loginPage";
 export { AdminPage } from "./adminPage";
+export { MapFinalPage } from "./mapFinalPage";

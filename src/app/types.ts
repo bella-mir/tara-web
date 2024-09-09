@@ -16,8 +16,10 @@ export interface IUserState {
 
 export enum ECategories {
   beutification = "beutification",
-  buildings = "buildings",
+  houses = "houses",
   heritage = "heritage",
+  culture = "culture",
+  business = "business",
   medicine = "medicine",
   education = "education",
   sport = "sport",

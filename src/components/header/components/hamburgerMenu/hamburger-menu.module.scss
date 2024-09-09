@@ -5,6 +5,7 @@
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  z-index: 1000;
 }
 
 .burger__menuToggle .burger__input {
@@ -15,6 +16,7 @@
   opacity: 0;
   z-index: 2;
   -webkit-touch-callout: none;
+  z-index: 1000;
 }
 
 .burger__menuToggle span {
@@ -23,12 +25,13 @@
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #f08332;
+  background: #4faa66;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  z-index: 1000;
 }
 
 .burger__menuToggle span:first-child {
@@ -42,7 +45,7 @@
 .burger__menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #f08332;
+  background: #4faa66;
 }
 
 .burger__menuToggle input:checked ~ span:nth-last-child(3) {
@@ -63,11 +66,9 @@
   padding-top: 160px;
   padding-bottom: 90px;
   box-sizing: border-box;
-
   background: #fafafa;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
 
@@ -77,6 +78,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% + 25px);
+  z-index: 99;
 }
 
 .burger__menuToggle input:checked ~ ul {

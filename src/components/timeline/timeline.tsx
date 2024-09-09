@@ -28,7 +28,7 @@ export const Timeline: React.FC<TimelineProps> = ({ stages }) => {
             <div className={styles.dateRange}>{stage.dateRange}</div>
             <div className={styles.title} onClick={() => handleToggle(index)}>
               {/* Этап {index + 1}: */}
-              {stage.title} &rsaquo;
+              {stage.title}&nbsp;&rsaquo;
             </div>
             {openIndex === index && (
               <div className={styles.description}>{stage.description}</div>

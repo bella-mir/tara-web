@@ -10,16 +10,42 @@
   }
 }
 
+.radio {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  .radioButton {
+    min-width: fit-content;
+    width: calc((100% - 40px) / 4);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
 .button {
   display: flex;
   align-items: right;
   justify-content: right;
   margin-top: 20px;
   right: 0;
+  .buttonElement {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
   .form {
     flex-direction: column;
+    gap: 0;
   }
 }

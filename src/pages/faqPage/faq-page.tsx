@@ -1,4 +1,4 @@
-import { Avatar, List } from "antd";
+import { List } from "antd";
 import { Container } from "../../components";
 import { FAQ } from "./faq-page-constants";
 

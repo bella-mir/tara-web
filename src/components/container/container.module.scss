@@ -3,7 +3,7 @@
   overflow: auto;
   align-items: top;
   background-color: #fafafa;
-  min-height: 100vh;
+  // min-height: 100vh;
   width: calc(100vw);
   margin-left: -8px;
   box-sizing: border-box;
@@ -11,5 +11,11 @@
   .inside {
     max-width: 1280px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 2rem 0;
   }
 }

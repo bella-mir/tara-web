@@ -11,7 +11,7 @@
   top: 0;
   width: 3px;
   height: calc(100% - 50px);
-  background-color: #3498db;
+  background-color: #4faa66;
 }
 
 .timelineItem {
@@ -27,7 +27,7 @@
   top: 0;
   width: 20px;
   height: 20px;
-  background-color: #3498db;
+  background-color: #4faa66;
   border-radius: 50%;
   border: 3px solid white;
   transform: translateX(-50%);
@@ -55,7 +55,19 @@
 
 .description {
   padding: 10px;
-  // border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f9f9f9;
+  color: gray;
+}
+
+@media (max-width: 550px) {
+  .dateRange {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 18px;
+  }
 }
