@@ -1,7 +1,6 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import {
   Layer,
-  LngLatBoundsLike,
   Map,
   Marker,
   MarkerDragEvent,
@@ -45,10 +44,10 @@ export const MiniMap = () => {
   const mapRef = useRef(null);
   const API_KEY: string = "GU4MPQ5iNxp41sph03wQ";
 
-  const bounds = [
-    { lng: 130, lat: 43 },
-    { lng: 133, lat: 45 },
-  ];
+  // const bounds = [
+  //   { lng: 130, lat: 43 },
+  //   { lng: 133, lat: 45 },
+  // ];
 
   const layerFillStyle: LayerProps = {
     id: "dff",
@@ -70,6 +69,7 @@ export const MiniMap = () => {
     <>
       <Map
         attributionControl={false}
+        //@ts-ignore
         mapLib={maplibregl}
         mapStyle={`https://api.maptiler.com/maps/1e6f009f-c894-4317-a466-fe522089bc87/style.json?key=${API_KEY}`}
         initialViewState={{

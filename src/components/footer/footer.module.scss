@@ -1,6 +1,6 @@
 .footer__wrapper {
   // background-color: #79b0d6;
-  background-color: rgba(212, 163, 57, 0.5);
+  background-color: #d4a33980;
   min-height: 150px;
   padding: 0;
 }
@@ -24,6 +24,10 @@
   height: 50px;
 
   filter: invert(100%) brightness(2);
+}
+
+.logoHseUni {
+  height: 50px;
 }
 
 .logoHse {

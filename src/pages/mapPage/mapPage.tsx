@@ -89,6 +89,7 @@ export const MapPage = () => {
         clusterLayer.id &&
         unclusteredPointLayer.id && (
           <Map
+            //@ts-ignore
             mapLib={maplibregl}
             mapStyle={`https://api.maptiler.com/maps/1e6f009f-c894-4317-a466-fe522089bc87/style.json?key=${API_KEY}`}
             style={{ width: "100vw", height: "100vh" }}

@@ -3,6 +3,7 @@ import vk from "../../asserts/logos/vk.svg";
 import tg from "../../asserts/logos/tg.svg";
 import cityChoose from "../../asserts/logos/cityChoose.png";
 import hseLogo from "../../asserts/logos/hseLogo.svg";
+import hseUni from "../../asserts/logos/hseUni.svg";
 import domLogo from "../../asserts/logos/logo-dom-rf.png";
 import { Link } from "react-router-dom";
 import { Container } from "../container";
@@ -21,6 +22,7 @@ export const Footer = () => {
               className={cn(styles.logo, styles.logoDom)}
             />
 
+            <img src={hseUni} alt="HSE Uni" className={cn(styles.logoHseUni)} />
             <img src={hseLogo} alt="HSE Logo" className={styles.logoHse} />
           </div>
           <img
