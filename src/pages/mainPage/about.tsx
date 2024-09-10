@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import taramap from "../../asserts/Tara_map.png";
 import styles from "./main-page.module.scss";
 import classNames from "classnames";
+import { useLocation } from "react-router-dom";
 
 export const About = () => {
+  const { hash } = useLocation();
+
   useEffect(() => {
-    const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
       if (element) {
@@ -19,7 +21,7 @@ export const About = () => {
         });
       }
     }
-  }, [window.location.hash]);
+  }, [hash]);
 
   return (
     <div className={styles.block} id="about">
@@ -49,7 +51,10 @@ export const About = () => {
             организации, предприятия и бизнес, местные эксперты и культурные
             институции, администрация. За выстраивание диалога всех участников
             отвечают эксперты по соучаствующему проектированию и развитию
-            территорий – партнерство Городрешает.рф
+            территорий – партнерство{" "}
+            <a href="https://xn--80afdeb4capcx7d.xn--p1ai/" target="_blank">
+              Городрешает.рф
+            </a>
           </p>
         </div>
         <div className={classNames(styles.blockColumn, styles.blockMap)}>

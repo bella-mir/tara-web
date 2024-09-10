@@ -30,7 +30,7 @@ export const MENU: IMenuElement[] = [
     link: "/#about",
   },
   {
-    name: "СОУЧАСТИЕ",
+    name: "УЧАСТИЕ",
     link: "/form",
   },
   {

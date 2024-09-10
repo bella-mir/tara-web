@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   CollapsibleBlock,
   Container,
@@ -14,8 +14,27 @@ import goncharov from "./asserts/goncharov.jpg";
 import finogenov from "./asserts/finogenov.jpg";
 import lysenkov from "./asserts/lysenkov.jpeg";
 import shipilenko from "./asserts/shpilenko.jpg";
+import { useEffect } from "react";
 
 export const MainPage = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        const yOffset = -100;
+        const yPosition =
+          element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({
+          top: yPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       <Container className={styles.main}>
@@ -25,7 +44,7 @@ export const MainPage = () => {
             Тара решает, как должен развиваться город
           </p>
           <div>
-            <Link to="/form" className={styles.buttonLink}>
+            <Link to="/#particip" className={styles.buttonLink}>
               Участвовать
             </Link>
           </div>
@@ -141,7 +160,7 @@ export const MainPage = () => {
                   преобразования должны вести к повышению качества их жизни
                 </div>
                 <div className={styles.sign}>
-                  <span>Евгений Николаевич Лысенков,</span>
+                  <span>Евгений Николаевич Лысаков,</span>
                   <span>глава Тарского муниципального района</span>
                 </div>
               </div>
@@ -197,8 +216,31 @@ export const MainPage = () => {
         </div>
       </Container>
       <Container className={styles.blockParticipation}>
-        <div className={styles.block}>
+        <div className={styles.block} id="particip">
           <h2 className={styles.blockTitle}>Участие в проекте</h2>
+          {/* <p className={styles.blockText}>
+            "На все этапах разработка мастер-плана — открытый процесс,
+            участником которого может стать каждый тарчанин. Ведь именно вы
+            живете в городе, каждый день ходите по его улицам, работаете,
+            отдыхаете, учитесь, растите детей, имеете свои мечты и мысли о том,
+            что стоит изменить. Цель участия – сформировать открытое задание на
+            мастер-план города.
+            <p>
+              Совместная работа над заданием познакомит разные группы активных
+              горожан между собой, поможет наладить новые связи и станет
+              источником новых инициатив. А также это один из способов наладить
+              диалог горожан с администрацией и выявить запросы в нескольких
+              сферах.
+            </p>
+            <p>
+              Пройти опрос, оставить предложение на карте, прийти на экскурсию
+              по городу с разработчиками, стать участников мероприятий «Недели
+              мастер-плана» и предложить свое видение будущего Тары — выбирайте
+              свой способ участия и присоединяйтесь к команде проекта. Итоги
+              этой работы и станут заданием для разработчиков мастер-плана."
+            </p>
+            <p>Илья Севастьянов, партнер команды Городрешает.рф</p>
+          </p> */}
           <h3>Как тарчане могут высказать свое мнение?</h3>
           <div className={styles.cards}>
             <div className={styles.card}>
@@ -209,7 +251,7 @@ export const MainPage = () => {
                 задания на разработку мастер-плана
               </span>
               <Link
-                to="https://vk.com/tara_strategy"
+                to="https://forms.gle/aLD9HcHRuQA2eBfH8"
                 target="_blank"
                 className={styles.cardButton}
               >
@@ -266,9 +308,11 @@ export const MainPage = () => {
         <h3>Остались вопросы?</h3>
         <div className={styles.rowSocials}>
           <p className={styles.blockText}>
-            Напишите нам на почту <strong>masterplantary@hse.ru</strong> с темой
-            «Для мастер-плана Тары» и опишите подробно ваш вопрос или
-            предложение.
+            Если у вас остались вопросы или появились предложения, напишите нам
+            на почту <strong>masterplantary@hse.ru</strong> В теме письма
+            напишите «Для мастер-плана Тары», в самом письме представьтесь,
+            укажите ваши ФИО, номер телефона (или другой удобный способ связи с
+            вами) и опишите подробно ваш вопрос или предложение
           </p>
           <div className={styles.blockText}></div>
         </div>

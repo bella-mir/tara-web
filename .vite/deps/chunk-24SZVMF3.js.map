@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/rc-util/es/omit.js"],
+  "sourcesContent": ["import _objectSpread from \"@babel/runtime/helpers/esm/objectSpread2\";\nexport default function omit(obj, fields) {\n  var clone = _objectSpread({}, obj);\n  if (Array.isArray(fields)) {\n    fields.forEach(function (key) {\n      delete clone[key];\n    });\n  }\n  return clone;\n}"],
+  "mappings": ";;;;;AACe,SAAR,KAAsB,KAAK,QAAQ;AACxC,MAAI,QAAQ,eAAc,CAAC,GAAG,GAAG;AACjC,MAAI,MAAM,QAAQ,MAAM,GAAG;AACzB,WAAO,QAAQ,SAAU,KAAK;AAC5B,aAAO,MAAM,GAAG;AAAA,IAClB,CAAC;AAAA,EACH;AACA,SAAO;AACT;",
+  "names": []
+}

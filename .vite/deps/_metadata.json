@@ -1,0 +1,221 @@
+{
+  "hash": "4c65a185",
+  "browserHash": "2d2384df",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "0f72bd8e",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "e23f3969",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8d07727a",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "33b417be",
+      "needsInterop": false
+    },
+    "antd": {
+      "src": "../../node_modules/antd/es/index.js",
+      "file": "antd.js",
+      "fileHash": "c0b54ee3",
+      "needsInterop": false
+    },
+    "antd/es/locale/ru_RU": {
+      "src": "../../node_modules/antd/es/locale/ru_RU.js",
+      "file": "antd_es_locale_ru_RU.js",
+      "fileHash": "027c4df5",
+      "needsInterop": false
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/es/index.js",
+      "file": "react-redux.js",
+      "fileHash": "f6a3ed9c",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "806053b1",
+      "needsInterop": false
+    },
+    "classnames": {
+      "src": "../../node_modules/classnames/index.js",
+      "file": "classnames.js",
+      "fileHash": "53abf6a1",
+      "needsInterop": true
+    },
+    "antd/es/button": {
+      "src": "../../node_modules/antd/es/button/index.js",
+      "file": "antd_es_button.js",
+      "fileHash": "6fd7c87e",
+      "needsInterop": false
+    },
+    "react-map-gl": {
+      "src": "../../node_modules/react-map-gl/dist/esm/index.js",
+      "file": "react-map-gl.js",
+      "fileHash": "16f36b56",
+      "needsInterop": false
+    },
+    "maplibre-gl": {
+      "src": "../../node_modules/maplibre-gl/dist/maplibre-gl.js",
+      "file": "maplibre-gl.js",
+      "fileHash": "d842b4a6",
+      "needsInterop": true
+    },
+    "@ant-design/icons": {
+      "src": "../../node_modules/@ant-design/icons/es/index.js",
+      "file": "@ant-design_icons.js",
+      "fileHash": "84171efe",
+      "needsInterop": false
+    },
+    "antd/es/card": {
+      "src": "../../node_modules/antd/es/card/index.js",
+      "file": "antd_es_card.js",
+      "fileHash": "dcae1f78",
+      "needsInterop": false
+    },
+    "antd/es/tag": {
+      "src": "../../node_modules/antd/es/tag/index.js",
+      "file": "antd_es_tag.js",
+      "fileHash": "b401b5b3",
+      "needsInterop": false
+    },
+    "antd/es/modal": {
+      "src": "../../node_modules/antd/es/modal/index.js",
+      "file": "antd_es_modal.js",
+      "fileHash": "5ac5d9b7",
+      "needsInterop": false
+    },
+    "antd/es/avatar": {
+      "src": "../../node_modules/antd/es/avatar/index.js",
+      "file": "antd_es_avatar.js",
+      "fileHash": "3583f500",
+      "needsInterop": false
+    },
+    "antd/es/badge": {
+      "src": "../../node_modules/antd/es/badge/index.js",
+      "file": "antd_es_badge.js",
+      "fileHash": "34051e44",
+      "needsInterop": false
+    },
+    "antd/es/button/button": {
+      "src": "../../node_modules/antd/es/button/button.js",
+      "file": "antd_es_button_button.js",
+      "fileHash": "0af7ded8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "mapbox-gl-2ICUNEW7": {
+      "file": "mapbox-gl-2ICUNEW7.js"
+    },
+    "chunk-TVRZYAGF": {
+      "file": "chunk-TVRZYAGF.js"
+    },
+    "chunk-SW6NZCZX": {
+      "file": "chunk-SW6NZCZX.js"
+    },
+    "chunk-3WKQHPDP": {
+      "file": "chunk-3WKQHPDP.js"
+    },
+    "chunk-BJG2TZNG": {
+      "file": "chunk-BJG2TZNG.js"
+    },
+    "chunk-QPCEH2AY": {
+      "file": "chunk-QPCEH2AY.js"
+    },
+    "chunk-WSM5DAYS": {
+      "file": "chunk-WSM5DAYS.js"
+    },
+    "chunk-EFOE4RVH": {
+      "file": "chunk-EFOE4RVH.js"
+    },
+    "chunk-VCMMPPWA": {
+      "file": "chunk-VCMMPPWA.js"
+    },
+    "chunk-RCNWBID4": {
+      "file": "chunk-RCNWBID4.js"
+    },
+    "chunk-YW3CHCIR": {
+      "file": "chunk-YW3CHCIR.js"
+    },
+    "chunk-HQNMDJWD": {
+      "file": "chunk-HQNMDJWD.js"
+    },
+    "chunk-NZGUMIWQ": {
+      "file": "chunk-NZGUMIWQ.js"
+    },
+    "chunk-FG5HOXEM": {
+      "file": "chunk-FG5HOXEM.js"
+    },
+    "chunk-4IZ4SS3C": {
+      "file": "chunk-4IZ4SS3C.js"
+    },
+    "chunk-VXLS5PZX": {
+      "file": "chunk-VXLS5PZX.js"
+    },
+    "chunk-RQMJBKSB": {
+      "file": "chunk-RQMJBKSB.js"
+    },
+    "chunk-K3J4CGMF": {
+      "file": "chunk-K3J4CGMF.js"
+    },
+    "chunk-24SZVMF3": {
+      "file": "chunk-24SZVMF3.js"
+    },
+    "chunk-Q7LUV27Q": {
+      "file": "chunk-Q7LUV27Q.js"
+    },
+    "chunk-ADXQIJM5": {
+      "file": "chunk-ADXQIJM5.js"
+    },
+    "chunk-Z5JHCET6": {
+      "file": "chunk-Z5JHCET6.js"
+    },
+    "chunk-72AWTN6Z": {
+      "file": "chunk-72AWTN6Z.js"
+    },
+    "chunk-PQEZCWQY": {
+      "file": "chunk-PQEZCWQY.js"
+    },
+    "chunk-DZXRV6RW": {
+      "file": "chunk-DZXRV6RW.js"
+    },
+    "chunk-HNXCBJII": {
+      "file": "chunk-HNXCBJII.js"
+    },
+    "chunk-TW2T7RO2": {
+      "file": "chunk-TW2T7RO2.js"
+    },
+    "chunk-GAYUDVIN": {
+      "file": "chunk-GAYUDVIN.js"
+    },
+    "chunk-PSGUSLG5": {
+      "file": "chunk-PSGUSLG5.js"
+    },
+    "chunk-5SMMSEZO": {
+      "file": "chunk-5SMMSEZO.js"
+    },
+    "chunk-G2VIFKUL": {
+      "file": "chunk-G2VIFKUL.js"
+    },
+    "chunk-ZAUFE7H7": {
+      "file": "chunk-ZAUFE7H7.js"
+    },
+    "chunk-UXIASGQL": {
+      "file": "chunk-UXIASGQL.js"
+    }
+  }
+}

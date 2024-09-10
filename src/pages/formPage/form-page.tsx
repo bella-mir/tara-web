@@ -103,7 +103,7 @@ export const FormPage = () => {
                   },
                 ]}
               >
-                <Select placeholder="Выберете категорию" options={CATEGORIES} />
+                <Select placeholder="Выберите категорию" options={CATEGORIES} />
               </Form.Item>
               <Form.Item
                 name="location"
@@ -188,12 +188,12 @@ export const FormPage = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Выберете вашу возрастную категорию",
+                    message: "Выберите вашу возрастную категорию",
                   },
                 ]}
               >
                 <Select
-                  placeholder="Выберете вашу возрастную категорию"
+                  placeholder="Выберите вашу возрастную категорию"
                   options={AGES}
                 />
               </Form.Item>
