@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/antd/es/_util/reactNode.js"],
-  "sourcesContent": ["import * as React from 'react';\nexport const {\n  isValidElement\n} = React;\nexport function isFragment(child) {\n  return child && isValidElement(child) && child.type === React.Fragment;\n}\nexport function replaceElement(element, replacement, props) {\n  if (!isValidElement(element)) {\n    return replacement;\n  }\n  return /*#__PURE__*/React.cloneElement(element, typeof props === 'function' ? props(element.props || {}) : props);\n}\nexport function cloneElement(element, props) {\n  return replaceElement(element, element, props);\n}"],
-  "mappings": ";;;;;;;;AAAA,YAAuB;AAChB,IAAM;AAAA,EACX;AACF,IAAI;AACG,SAAS,WAAW,OAAO;AAChC,SAAO,SAAS,eAAe,KAAK,KAAK,MAAM,SAAe;AAChE;AACO,SAAS,eAAe,SAAS,aAAa,OAAO;AAC1D,MAAI,CAAC,eAAe,OAAO,GAAG;AAC5B,WAAO;AAAA,EACT;AACA,SAA0B,mBAAa,SAAS,OAAO,UAAU,aAAa,MAAM,QAAQ,SAAS,CAAC,CAAC,IAAI,KAAK;AAClH;AACO,SAASA,cAAa,SAAS,OAAO;AAC3C,SAAO,eAAe,SAAS,SAAS,KAAK;AAC/C;",
-  "names": ["cloneElement"]
-}
