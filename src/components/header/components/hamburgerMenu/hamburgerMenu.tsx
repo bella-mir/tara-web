@@ -1,24 +1,26 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { IMenuElement } from "../../header-types";
 import styles from "./hamburger-menu.module.scss";
 
 export const HamburgerMenu = ({ menu }: { menu: IMenuElement[] }) => {
-  const [isOpened, setIsOpened] = useState(true);
+  const [isOpened, setIsOpened] = useState<boolean>(true);
   const [buttonPosition, setButtonPosition] = useState<any>("absolute");
+  const location = useLocation();
 
   const navStyle = ({ isActive }: { isActive: boolean }) => ({
     textDecoration: isActive ? "none" : "none",
   });
 
-  const handleChange = (event: any) => {
-    if (event.target.checked) {
-      setButtonPosition(() => "fixed");
-    } else {
-      setButtonPosition(() => "absolute");
-    }
+  const handleChange = useCallback((isChecked: Boolean) => {
+    setButtonPosition(isChecked ? "fixed" : "absolute");
     setIsOpened((current) => !current);
-  };
+  }, []);
+
+  useEffect(() => {
+    setIsOpened(false);
+    setButtonPosition("absolute");
+  }, [location]);
 
   return (
     <div
@@ -28,8 +30,8 @@ export const HamburgerMenu = ({ menu }: { menu: IMenuElement[] }) => {
       <input
         className={styles.burger__input}
         type="checkbox"
-        value={Number(isOpened)}
-        onChange={handleChange}
+        checked={isOpened}
+        onChange={(event) => handleChange(event.target.checked)}
         style={{ position: buttonPosition }}
       />
       <span></span>

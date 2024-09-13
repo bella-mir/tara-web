@@ -1,0 +1,19 @@
+.teamList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // justify-content: space-around;
+  gap: 40px;
+}
+
+.teamMember {
+  flex: 1 1 160px;
+  max-width: 160px;
+  margin: 10px;
+}
+
+.teamImg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

@@ -17,6 +17,11 @@ export const AdminPage = () => {
 
   const columns: ColumnsType<any> = [
     {
+      title: "Тип ответа",
+      dataIndex: "formMode",
+      key: "formMode",
+    },
+    {
       title: "Категория",
       dataIndex: "category",
       key: "category",
@@ -42,9 +47,9 @@ export const AdminPage = () => {
       ),
     },
     {
-      title: "Имя",
-      dataIndex: "name",
-      key: "name",
+      title: "Адрес",
+      dataIndex: "address",
+      key: "address",
     },
     {
       title: "Возраст",
@@ -55,11 +60,6 @@ export const AdminPage = () => {
       title: "Отношение к городу",
       dataIndex: "relation",
       key: "relation",
-    },
-    {
-      title: "Контакты",
-      dataIndex: "contacts",
-      key: "contacts",
     },
     {
       title: "Модерация",

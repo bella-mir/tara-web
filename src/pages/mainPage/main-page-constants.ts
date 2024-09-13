@@ -1,3 +1,10 @@
+import bazanchuk from "./asserts/bazanchuk.jpeg";
+import klimanov from "./asserts/klimanov.jpeg";
+import mikhaylenko from "./asserts/mikhaylenko.jpeg";
+import molodceva from "./asserts/molodceva.jpeg";
+import mugak from "./asserts/mugak.png";
+import zautdinova from "./asserts/zautdiniva.jpeg";
+
 export const FAQ: { question: string; answer: string }[] = [
   {
     question:
@@ -55,5 +62,43 @@ export const STAGES = [
     dateRange: "Март",
     description:
       "Публикуем мастер-план и проводим публичную презентацию, на которой подробно объясняем какие запросы горожан были учтены, а какие учесть не удалось (если такие будут) и по каким причинам.",
+  },
+];
+
+export const TEAM_MEMBERS = [
+  {
+    photo: mugak,
+    name: "Мугак Николай Анатольевич",
+    description:
+      "Первый заместитель Главы Тарского муниципального района по вопросам строительства и сельского хозяйства",
+  },
+  {
+    photo: mikhaylenko,
+    name: "Михайленко Евгений Константинович",
+    description: "Декан Факультета городского и регионального развития НИУ ВШЭ",
+  },
+  {
+    photo: bazanchuk,
+    name: "Базанчук Ксения",
+    description:
+      "Руководитель отдела аналитического сопровождения проектов Фонда ДОМ.РФ",
+  },
+  {
+    photo: zautdinova,
+    name: "Зиатдинова Саида",
+    description: "Руководитель проектов Фонда ДОМ.РФ",
+  },
+  {
+    photo: molodceva,
+    name: "Молодцова Варвара",
+    description:
+      "Заместитель руководителя Высшей школы урбанистики им.А.А.\u00A0Высоковского, Факультет городского и регионального развития НИУ ВШЭ",
+  },
+
+  {
+    photo: klimanov,
+    name: "Климанов Максим",
+    description:
+      "Ведущий инженер Высшей школы урбанистики им.А.А.\u00A0Высоковского, Факультет городского и регионального развития НИУ ВШЭ",
   },
 ];

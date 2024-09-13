@@ -152,18 +152,18 @@ export const RELATION: DefaultOptionType[] = [
 ];
 
 export const TAG_COLORS: { [key in ECategories]: string } = {
-  [ECategories.beutification]: "#D6603C",
-  [ECategories.houses]: "#815836",
+  [ECategories.beutification]: "#81AB2A",
+  [ECategories.houses]: "#584E35",
   [ECategories.transport]: "#37576C",
-  [ECategories.nature]: "#81AB2A",
-  [ECategories.medicine]: "#79B0D7",
-  [ECategories.education]: "#D4A339",
-  [ECategories.services]: "#A63D32",
-  [ECategories.sport]: "#506326",
-  [ECategories.business]: "#8C8345",
-  [ECategories.culture]: "#D8D091",
-  [ECategories.heritage]: "#9BABB5",
-  [ECategories.other]: "#C4C1B8",
+  [ECategories.nature]: "#8C8244",
+  [ECategories.medicine]: "#DC7759",
+  [ECategories.education]: "#D4A43A",
+  [ECategories.services]: "#79B0D7",
+  [ECategories.sport]: "#4F6225",
+  [ECategories.business]: "#D9D08F",
+  [ECategories.culture]: "#805835",
+  [ECategories.heritage]: "#A53D31",
+  [ECategories.other]: "#807864",
 };
 
 export const ICON_COMPONENTS: { [key in ECategories]: string } = {

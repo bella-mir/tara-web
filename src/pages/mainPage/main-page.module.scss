@@ -51,7 +51,7 @@
 
 .blockStages {
   padding-bottom: 5rem;
-  background-color: rgba(184, 176, 162, 0.2);
+  // background-color: rgba(184, 176, 162, 0.2);
 }
 
 .blockCollapse {
@@ -71,6 +71,11 @@
 
 .blockParticipation {
   padding: 5rem 2rem 3rem;
+  background-color: rgba(184, 176, 162, 0.2);
+}
+
+.blockTeam {
+  padding: 1rem 2rem;
 }
 
 .block {
@@ -164,6 +169,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 24px;
+
   .card {
     background-color: white;
     border-radius: 20px;
@@ -174,6 +180,7 @@
     width: 460px;
     // cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    // background-color: #ebd1a1;
     .cardTime {
       align-self: end;
       margin-bottom: 1rem;
@@ -197,15 +204,33 @@
       margin-top: auto;
     }
 
+    .cardButton2 {
+      background-color: rgba(212, 163, 57, 1);
+    }
+
     .cardImage {
       margin: -1rem -2rem -2rem;
-      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       object-fit: cover;
       z-index: 11;
       height: fit-content;
-      height: 100px;
+      height: 200px;
+      margin-bottom: 1rem;
+      object-position: top left;
+      max-width: calc(100% + 4rem);
+    }
+
+    .cardImageCentered {
+      object-position: center;
     }
   }
+
+  // .cardEvent {
+  //   background-color: #c4d4f2;
+  // }
 }
 
 .cardButton:hover {
@@ -356,6 +381,11 @@
   height: 100px;
 }
 
+.teamImg {
+  width: 200px;
+  border-radius: 20px;
+}
+
 @media (max-width: 1020px) {
   .main {
     // background-size: 80%;
@@ -444,7 +474,15 @@
     max-width: 100%;
     // text-align: center;
   }
+  .photoFrame {
+    width: 250px;
+    height: 250px;
+  }
 }
 
-// @media (max-width: 550px) {
-// }
+@media (max-width: 550px) {
+  .photoFrame {
+    width: 200px;
+    height: 200px;
+  }
+}
