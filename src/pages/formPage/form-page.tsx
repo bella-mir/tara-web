@@ -1,4 +1,13 @@
-import { Form, Select, Button, Input, Modal, Radio } from "antd";
+import {
+  Form,
+  Select,
+  Button,
+  Input,
+  Modal,
+  Radio,
+  message,
+  Upload,
+} from "antd";
 import { Container } from "../../components/index.js";
 import styles from "./form-page.module.scss";
 import { MiniMap } from "./components/mini-map";
@@ -7,13 +16,17 @@ import { useState } from "react";
 import { useAppDispatch } from "../../app/hooks.js";
 import { postIdea } from "../../app/actions/ideas.js";
 import { AGES, CATEGORIES, RELATION } from "../../utils/app-constants.js";
+import { storage } from "../../app/firebase/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Firebase functions
+import { UploadOutlined } from "@ant-design/icons";
+import type { RcFile } from "antd/es/upload/interface";
 
 export const FormPage = () => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
   const [formMode, setFormMode] = useState<string>("idea");
-  // const [image, setImage] = useState<File | null>(null);
-  // const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null); // Save Firebase URL
+  const [loading, setLoading] = useState<boolean>(false); // Loading state for the upload
   const [coordinates, setCoordinates] = useState<{
     lng: number;
     lat: number;
@@ -27,25 +40,63 @@ export const FormPage = () => {
     setFormMode(e.target.value); // Save the selected value to state
   };
 
-  // // Handle file input change
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files ? e.target.files[0] : null;
-  //   if (file) {
-  //     if (file.size > 5 * 1024 * 1024) {
-  //       // 5MB limit
-  //       message.error("Файл слишком большой. Максимальный размер — 5MB.");
-  //       return;
-  //     }
-  //     if (!file.type.startsWith("image/")) {
-  //       message.error("Только изображения допустимы.");
-  //       return;
-  //     }
-  //     setImage(file);
-  //     setImagePreview(URL.createObjectURL(file)); // Create a preview URL
-  //     console.log(imagePreview);
-  //   }
-  // };
+  // Handle Firebase image upload and get URL
+  const uploadImageToFirebase = async (file: RcFile) => {
+    setLoading(true);
+    try {
+      const storageRef = ref(storage, `images/${file.name}`);
+      await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
+      setImageUrl(downloadURL);
+      setLoading(false);
+      message.success("Изображение успешно загружено");
+    } catch (error) {
+      message.error("Ошибка при загрузке изображения");
+      console.error("Error uploading image: ", error);
+      setLoading(false);
+    }
+  };
 
+  const beforeUpload = (file: RcFile) => {
+    const isImage = file.type.startsWith("image/");
+    const isLt5M = file.size / 1024 / 1024 < 5;
+    const validImageTypes = ["image/jpeg", "image/png"];
+
+    if (!isImage) {
+      message.error("Можно загружать только изображения.");
+      return Upload.LIST_IGNORE;
+    }
+
+    if (!validImageTypes.includes(file.type)) {
+      message.error(
+        `${file.name} не является допустимым типом изображения. Допустимы только JPG и PNG.`
+      );
+      return Upload.LIST_IGNORE;
+    }
+
+    if (!isLt5M) {
+      message.error("Файл должен быть меньше 5MB.");
+      return Upload.LIST_IGNORE;
+    }
+
+    return true; // Если всё ок, разрешаем загрузку
+  };
+
+  // Custom request handler for Upload component
+  const customRequest = async ({ file, onSuccess, onError }: any) => {
+    try {
+      await uploadImageToFirebase(file);
+      onSuccess(null, file); // Indicate success to the Upload component
+    } catch (error) {
+      onError(error); // Indicate error to the Upload component
+    }
+  };
+
+  const onRemove = () => {
+    setImageUrl(null);
+  };
+
+  // Form success modal
   const success = () => {
     Modal.success({
       content:
@@ -54,10 +105,17 @@ export const FormPage = () => {
     form.resetFields();
   };
 
+  // Form submission handler
   const onFinish = (values: any) => {
-    dispatch(postIdea({ ...values, coordinates, formMode })).then(() =>
-      success()
-    );
+    dispatch(
+      postIdea({
+        ...values,
+        coordinates,
+        formMode,
+        image: imageUrl,
+      })
+    ).then(() => success());
+    setImageUrl(null);
   };
 
   return (
@@ -167,24 +225,27 @@ export const FormPage = () => {
                   options={RELATION}
                 />
               </Form.Item>
-              {/* <div className={styles.fileUpload}>
-                <label htmlFor="image">Загрузите изображение:</label>
-                <input
-                  id="image"
-                  type="file"
+
+              <Form.Item
+                label="Добавьте изображение"
+                tooltip="Пожалуйста, загрузите изображение"
+              >
+                <Upload
                   accept="image/*"
-                  onChange={handleFileChange}
-                />
-                {image && (
-                  <img
-                    src={URL.createObjectURL(image)}
-                    alt="Preview"
-                    className={styles.imagePreview}
-                  />
-                )}
-              </div> */}
+                  customRequest={customRequest}
+                  beforeUpload={beforeUpload}
+                  onRemove={onRemove}
+                  maxCount={1}
+                  listType="picture"
+                >
+                  <Button icon={<UploadOutlined />}>
+                    Загрузить изображение
+                  </Button>
+                </Upload>
+              </Form.Item>
             </div>
           </div>
+
           <div className={styles.form}>
             <div className={styles.column}></div>
             <div className={styles.column}>
@@ -194,6 +255,7 @@ export const FormPage = () => {
                   size="large"
                   htmlType="submit"
                   className={styles.buttonElement}
+                  loading={loading}
                 >
                   Рассказать
                 </Button>

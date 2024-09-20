@@ -122,8 +122,18 @@ export const IdeaCard = ({ cardId }: { cardId: string }) => {
         >
           {cardCategory}
         </Tag>
-        <p className={styles.textModal}>{card.idea}</p>
-        <MiniMapModal location={card?.coordinates} />
+        <div className={styles.contentModal}>
+          <p className={styles.textModal}>{card.idea}</p>
+          <MiniMapModal location={card?.coordinates} />
+          <p>Фото:</p>
+          {card.image && (
+            <img
+              src={card.image}
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          )}
+        </div>
       </Modal>
     </>
   );

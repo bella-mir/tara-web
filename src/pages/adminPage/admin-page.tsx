@@ -78,6 +78,19 @@ export const AdminPage = () => {
       render: (relation) => getRelationLabel(relation),
     },
     {
+      title: "Изображение",
+      dataIndex: "image",
+      key: "image",
+      render: (link) =>
+        link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            Клик
+          </a>
+        ) : (
+          ""
+        ),
+    },
+    {
       title: "Модерация",
       dataIndex: "_id",
       key: "contacts",

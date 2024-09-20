@@ -50,3 +50,14 @@
   justify-content: end;
   // margin: 1rem 0;
 }
+
+.cardImage {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.contentModal {
+  max-height: 50vh;
+  overflow: auto;
+}

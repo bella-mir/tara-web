@@ -96,7 +96,7 @@ export const MapPage = () => {
             initialViewState={{
               latitude: 56.9012,
               longitude: 74.3753,
-              zoom: 11,
+              zoom: 13,
             }}
             ref={mapRef}
             maxZoom={15}

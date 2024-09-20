@@ -56,4 +56,5 @@ export interface IIdeaState {
   relation: ERelation;
   confirmed: boolean;
   likes?: string[];
+  image?: string;
 }
