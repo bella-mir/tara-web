@@ -49,7 +49,7 @@ export const MapPage = () => {
   };
   const maxBounds = [
     { lng: 73, lat: 55 },
-    { lng: 75, lat: 57 },
+    { lng: 76, lat: 58 },
   ];
 
   const onClick = useCallback(
@@ -96,7 +96,7 @@ export const MapPage = () => {
             initialViewState={{
               latitude: 56.9012,
               longitude: 74.3753,
-              zoom: 12,
+              zoom: 11,
             }}
             ref={mapRef}
             maxZoom={15}

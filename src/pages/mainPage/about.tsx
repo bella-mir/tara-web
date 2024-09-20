@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-// import cityChoose from "../../asserts/logos/cityChoose.png";
-// import hse from "../../asserts/logos/hse_gray.svg";
+import { useLocation } from "react-router-dom";
 import taramap from "../../asserts/Tara_map.png";
 import styles from "./main-page.module.scss";
 import classNames from "classnames";
-import { useLocation } from "react-router-dom";
 
 export const About = () => {
   const { hash } = useLocation();
@@ -50,8 +48,8 @@ export const About = () => {
             разные участники: горожане и их объединения, некоммерческие
             организации, предприятия и бизнес, местные эксперты и культурные
             институции, администрация. За выстраивание диалога всех участников
-            отвечают эксперты по соучаствующему проектированию и развитию
-            территорий – партнерство{" "}
+            отвечают эксперты по общественному участию и социокультурному
+            развитию территорий –
             <a href="https://xn--80afdeb4capcx7d.xn--p1ai/" target="_blank">
               Городрешает.рф
             </a>

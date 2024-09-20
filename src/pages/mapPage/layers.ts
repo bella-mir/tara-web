@@ -18,8 +18,11 @@ export const clusterCountLayer: LayerProps = {
   filter: ["has", "point_count"],
   layout: {
     "text-field": "{point_count_abbreviated}",
-    "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-    "text-size": 12,
+    "text-font": ["DIN Offc Pro Bold", "Arial Unicode MS Bold"],
+    "text-size": 14,
+  },
+  paint: {
+    "text-color": "white",
   },
 };
 
@@ -56,7 +59,7 @@ export const unclusteredPointLayer: LayerProps = {
       "#A53D31",
       /* other */ "#807864",
     ],
-    "circle-radius": 7,
+    "circle-radius": 10,
     "circle-stroke-width": 1,
     "circle-stroke-color": "white",
   },

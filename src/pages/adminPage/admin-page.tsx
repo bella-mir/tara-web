@@ -6,10 +6,22 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks.js";
 import { getAllIdeas } from "../../app/selectors/ideas.js";
 import { useEffect } from "react";
 import { fetchIdeas } from "../../app/actions/ideas.js";
+import styles from "./admin-page.module.scss";
+import { CSVLink } from "react-csv";
+import {
+  getAgeLabel,
+  getCategoryLabel,
+  getFormMode,
+  getRelationLabel,
+} from "./admin-page-utils.js";
+import { LogoutButton } from "./components/logoutButton.js";
 
 export const AdminPage = () => {
   const dispatch = useAppDispatch();
   const allIdeas = useAppSelector(getAllIdeas);
+
+  const today = new Date();
+  const formattedDate = today.toISOString().slice(0, 10);
 
   useEffect(() => {
     dispatch(fetchIdeas());
@@ -20,11 +32,13 @@ export const AdminPage = () => {
       title: "Тип ответа",
       dataIndex: "formMode",
       key: "formMode",
+      render: (formMode) => getFormMode(formMode),
     },
     {
       title: "Категория",
       dataIndex: "category",
       key: "category",
+      render: (categroyValue) => getCategoryLabel(categroyValue),
     },
     {
       title: "Название идеи",
@@ -55,11 +69,13 @@ export const AdminPage = () => {
       title: "Возраст",
       dataIndex: "age",
       key: "age",
+      render: (age) => getAgeLabel(age),
     },
     {
       title: "Отношение к городу",
       dataIndex: "relation",
       key: "relation",
+      render: (relation) => getRelationLabel(relation),
     },
     {
       title: "Модерация",
@@ -71,7 +87,22 @@ export const AdminPage = () => {
 
   return (
     <Container>
-      <Table columns={columns} dataSource={allIdeas || undefined} />
+      <Table
+        columns={columns}
+        dataSource={allIdeas || undefined}
+        className={styles.table}
+        scroll={{ x: "max-content" }}
+      />
+      {allIdeas && (
+        <CSVLink
+          filename={`tara_data_${formattedDate}.csv`}
+          data={allIdeas}
+          className="btn btn-primary"
+        >
+          Export to CSV
+        </CSVLink>
+      )}
+      <LogoutButton />
     </Container>
   );
 };

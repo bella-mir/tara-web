@@ -1,20 +1,37 @@
 import Card from "antd/es/card";
 import Tag from "antd/es/tag";
 import { CATEGORIES, ICON_COMPONENTS, TAG_COLORS } from "../../../../utils";
-import styles from "./ideaCard.module.scss";
-
-import { IIdeaState } from "../../../../app/types";
 import Modal from "antd/es/modal";
 import { useState } from "react";
 import { MiniMapModal } from "./mini-map";
 import Avatar from "antd/es/avatar";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { deleteLikeIdea, likeIdea } from "../../../../app/actions/ideas";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
+import {
+  getCardLikes,
+  getIdeaById,
+  getIsSelectedById,
+} from "../../../../app/selectors/ideas";
+import styles from "./ideaCard.module.scss";
 
-export const IdeaCard = ({ card }: { card: IIdeaState }) => {
+export const IdeaCard = ({ cardId }: { cardId: string }) => {
+  const dispatch = useAppDispatch();
+
+  const card = useAppSelector((state) => getIdeaById(state, cardId));
+
+  const isSelected = useAppSelector((state) =>
+    getIsSelectedById(state, cardId)
+  );
+
+  const cardLikes = useAppSelector((state) => getCardLikes(state, cardId));
+
   const cardCategory = CATEGORIES.filter(
-    (category) => category.value === card.category
+    (category) => category.value === card?.category
   )[0]?.label;
 
   const [isOpened, openModal] = useState(false);
+
   const onCardClick = () => {
     openModal(true);
   };
@@ -22,6 +39,16 @@ export const IdeaCard = ({ card }: { card: IIdeaState }) => {
   const onClose = () => {
     openModal(false);
   };
+
+  const handleLike = (cardId: string) => {
+    dispatch(likeIdea(cardId));
+  };
+
+  const handleDislike = (cardId: string) => {
+    dispatch(deleteLikeIdea(cardId));
+  };
+
+  if (!card) return null;
 
   return (
     <>
@@ -47,6 +74,32 @@ export const IdeaCard = ({ card }: { card: IIdeaState }) => {
             </Tag>
           </div>
           <p className={styles.text}>{card.idea}</p>
+          <div className={styles.likeSection}>
+            {isSelected ? (
+              <HeartFilled
+                className={styles.likeIcon}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleDislike(card._id);
+                }}
+                style={{
+                  color: "darkgray",
+                  fontSize: "20px",
+                  cursor: "pointer",
+                }}
+              />
+            ) : (
+              <HeartOutlined
+                className={styles.likeIcon}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleLike(card._id);
+                }}
+                style={{ fontSize: "20px", cursor: "pointer" }}
+              />
+            )}
+            <span className={styles.likesCount}>{cardLikes}</span>
+          </div>
         </div>
       </Card>
 

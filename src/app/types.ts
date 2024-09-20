@@ -54,6 +54,6 @@ export interface IIdeaState {
   name: string;
   age: EAges;
   relation: ERelation;
-  contacts: string;
   confirmed: boolean;
+  likes?: string[];
 }

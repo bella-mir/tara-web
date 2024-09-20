@@ -1,9 +1,18 @@
-import bazanchuk from "./asserts/bazanchuk.jpeg";
-import klimanov from "./asserts/klimanov.jpeg";
-import mikhaylenko from "./asserts/mikhaylenko.jpeg";
-import molodceva from "./asserts/molodceva.jpeg";
-import mugak from "./asserts/mugak.png";
-import zautdinova from "./asserts/zautdiniva.jpeg";
+import bazanchuk from "./asserts/team/bazanchuk.jpeg";
+import klimanov from "./asserts/team/klimanov.jpeg";
+import mikhaylenko from "./asserts/team/mikhaylenko.jpeg";
+import molodceva from "./asserts/team/molodceva.jpeg";
+import mugak from "./asserts/team/mugak.png";
+import zautdinova from "./asserts/team/zautdiniva.jpeg";
+import kostarev from "./asserts/team/kostarev.jpg";
+import sevastjanov from "./asserts/team/sevastjanov.jpeg";
+
+import taraEvent from "./asserts/events/Tara_event2.png";
+import taraEvent2 from "./asserts/events/Tara_event9.jpg";
+import taraEvent4 from "./asserts/events/tara_event4.png";
+import taraEvent3 from "./asserts/events/tara_heritage.png";
+import taraEvent5 from "./asserts/events/Tara_event10.jpeg";
+import taraEvent6 from "./asserts/events/Tara_event7.jpeg";
 
 export const FAQ: { question: string; answer: string }[] = [
   {
@@ -72,11 +81,7 @@ export const TEAM_MEMBERS = [
     description:
       "Первый заместитель Главы Тарского муниципального района по вопросам строительства и сельского хозяйства",
   },
-  {
-    photo: mikhaylenko,
-    name: "Михайленко Евгений Константинович",
-    description: "Декан Факультета городского и регионального развития НИУ ВШЭ",
-  },
+
   {
     photo: bazanchuk,
     name: "Базанчук Ксения",
@@ -87,6 +92,11 @@ export const TEAM_MEMBERS = [
     photo: zautdinova,
     name: "Зиатдинова Саида",
     description: "Руководитель проектов Фонда ДОМ.РФ",
+  },
+  {
+    photo: mikhaylenko,
+    name: "Михайленко Евгений Константинович",
+    description: "Декан Факультета городского и регионального развития НИУ ВШЭ",
   },
   {
     photo: molodceva,
@@ -100,5 +110,71 @@ export const TEAM_MEMBERS = [
     name: "Климанов Максим",
     description:
       "Ведущий инженер Высшей школы урбанистики им.А.А.\u00A0Высоковского, Факультет городского и регионального развития НИУ ВШЭ",
+  },
+  {
+    photo: sevastjanov,
+    name: "Севастьянов Илья",
+    description:
+      "Эксперт по развитию территорий с участием граждан, партнер Городрешает.рф, преподаватель Высшей школы урбанистики им.А.А.\u00A0Высоковского, Факультет городского и регионального развития НИУ ВШЭ",
+  },
+  {
+    photo: kostarev,
+    name: "Костарев Сергей",
+    description:
+      "Методолог общественного участия, партнер Городрешает.рф, доктор философских наук, профессор кафедры «Связи с общественностью, сервис и туризм» ОмГУПС",
+  },
+];
+
+export const EVENTS = [
+  {
+    date: "17 сентября, 16:00",
+    title: "Экскурсия «Тара – музей под открытым небом»",
+    description: `Пройдем по маршруту знаковых памятников архитектуры на Ленина - Дзержинского - Спасская - Карбышева - Советская - Александровская - Избышева. Цель – обсудить наследие города и осмотреть в каком состоянии находятся памятники архитектуры и как следует их сохранять.
+    Ведущие: историк Денис Сугоняк (Тарский уезд) и Василий Александров (администрация).`,
+    imageSrc: taraEvent3,
+    location: "Тара, центр города",
+    link: "https://forms.gle/8tvhLF9jBjshJtBx5",
+  },
+  {
+    date: "18 сентября, 15:30 – 21:00",
+    title: "Конференция «Ценности, риски развития и видение будущего Тары»",
+    description: `Приглашаем вас вместе подумать о будущем Тары и определить требования к мастер плану. На конференции тарчане определят ценности, а затем в соответствии с ними предложат свои варианты видения будущего Тары.`,
+    imageSrc: taraEvent2,
+    location: "КДЦ «Север»",
+    link: "https://forms.gle/miwGLkZbmn8HTt5W6",
+  },
+  {
+    date: "19 сентября 15:00 – 17:00",
+    title: "Круглый стол «Бизнес в Таре: ограничения и перспективы развития»",
+    description: `Приглашаем предпринимателей обсудить преимущества и риски ведения производства в городе, существующие формы поддержки бизнеса, перспективные направления работы в рамках создания мастер-плана.`,
+    imageSrc: taraEvent,
+    location: "КДЦ «Север»",
+    link: "https://forms.gle/LR5z1pESjdk1DWfs5",
+  },
+  {
+    date: "19 сентября, 18:00",
+    title: "Экскурсия «Общественные пространства до и после благоустройства»",
+    description: `Пройдем по маршруту пл. Юбилейная - пл. Ленина - Пушкинский сквер - Парк культуры и отдыха - Никольский дворик. Обсудим, как благоустройство меняет жизнь горожан и какие есть проблемы.`,
+    imageSrc: taraEvent4,
+    location: "Тара, центральные улицы",
+    link: "https://forms.gle/AQrnTQRvVvC9bJZZ7",
+  },
+  {
+    date: "20 сентября, 15:00 – 17:00 ",
+    title:
+      "Проектная встреча «Образование, культура и здоровье в мастер-плане Тары»",
+    description: `Приглашаем в экспертную группу специалистов из сферы культуры, туризма, образования и здравоохранения, чтобы подробно обсудить проблемы и возможности развития каждой сферы в мастер-плане Тары.`,
+    imageSrc: taraEvent6,
+    location: "КДЦ «Север»",
+    link: "https://forms.gle/VLw7hxQB1V6Bms5x9 ",
+  },
+  {
+    date: "20 сентября, 18:15 ",
+    title: "Встреча с разработчиками мастер-плана",
+    description: `В рамках серии мероприятий библиотеки «Гений места» пройдет встреча с разработчиками мастер-плана: «Мастер-план как инструмент развития территорий: опыт российских городов и перспективы мастер-планирования для Тары» – Максим Климанов, Юрий Кульчицкий. Подведение первых итогов «Недели мастер-плана» – Илья Севастьянов
+`,
+    imageSrc: taraEvent5,
+    location: "Тарская библиотека имени Л. Н. Чашечникова",
+    link: "https://forms.gle/KbwGi1wRQhAgs6gy7",
   },
 ];

@@ -1,13 +1,4 @@
-import {
-  Form,
-  Select,
-  Button,
-  Input,
-  Modal,
-  Radio,
-  // message,
-  // Upload,
-} from "antd";
+import { Form, Select, Button, Input, Modal, Radio } from "antd";
 import { Container } from "../../components/index.js";
 import styles from "./form-page.module.scss";
 import { MiniMap } from "./components/mini-map";
@@ -15,14 +6,14 @@ import { FormContext } from "./formContext";
 import { useState } from "react";
 import { useAppDispatch } from "../../app/hooks.js";
 import { postIdea } from "../../app/actions/ideas.js";
-// import Icon, { UploadOutlined } from "@ant-design/icons";
 import { AGES, CATEGORIES, RELATION } from "../../utils/app-constants.js";
 
 export const FormPage = () => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
-  // const [imageFile, setImageFile] = useState<File | null>(null);
   const [formMode, setFormMode] = useState<string>("idea");
+  // const [image, setImage] = useState<File | null>(null);
+  // const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [coordinates, setCoordinates] = useState<{
     lng: number;
     lat: number;
@@ -35,6 +26,25 @@ export const FormPage = () => {
   const handleRadioChange = (e: any) => {
     setFormMode(e.target.value); // Save the selected value to state
   };
+
+  // // Handle file input change
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files ? e.target.files[0] : null;
+  //   if (file) {
+  //     if (file.size > 5 * 1024 * 1024) {
+  //       // 5MB limit
+  //       message.error("Файл слишком большой. Максимальный размер — 5MB.");
+  //       return;
+  //     }
+  //     if (!file.type.startsWith("image/")) {
+  //       message.error("Только изображения допустимы.");
+  //       return;
+  //     }
+  //     setImage(file);
+  //     setImagePreview(URL.createObjectURL(file)); // Create a preview URL
+  //     console.log(imagePreview);
+  //   }
+  // };
 
   const success = () => {
     Modal.success({
@@ -50,24 +60,9 @@ export const FormPage = () => {
     );
   };
 
-  // // Function to handle file size validation
-  // const beforeUpload = (file: File) => {
-  //   const isLt5M = file.size / 1024 / 1024 < 5;
-  //   if (!isLt5M) {
-  //     message.error("Изображение должно быть меньше 5мб");
-  //   }
-  //   return isLt5M || Upload.LIST_IGNORE;
-  // };
-
-  // const handleImageChange = (info: any) => {
-  //   if (info.file.status === "done" || info.file.status === "uploading") {
-  //     setImageFile(imageFile);
-  //   }
-  // };
-
   return (
     <FormContext.Provider value={{ coordinates, setCoordinates }}>
-      <Container>
+      <Container className={styles.container}>
         <div className={styles.row}>
           <h2>Какой вы хотите видеть Тару?</h2>
         </div>
@@ -138,48 +133,6 @@ export const FormPage = () => {
               >
                 <Input.TextArea showCount maxLength={1000} />
               </Form.Item>
-              {/* <Form.Item
-                name="image"
-                label="Загрузите изображение"
-                tooltip="до 5 Мб"
-              >
-                <Upload
-                  name="image"
-                  listType="picture"
-                  beforeUpload={beforeUpload}
-                  maxCount={1}
-                  onChange={handleImageChange}
-                >
-                  <Button icon={<UploadOutlined />}>Добавить</Button>
-                </Upload>
-              </Form.Item> */}
-
-              {/* <Form.Item
-                name="image"
-                label="Загрузите изображение"
-                tooltip="до 5 Мб"
-              >
-                <Upload
-                  accept=".png, .jpg"
-                  showUploadList={false}
-                  beforeUpload={(file) => {
-                    const reader = new FileReader();
-
-                    reader.onload = (e) => {
-                      console.log(e.target.result);
-                    };
-                    reader.readAsText(file);
-
-                    // Prevent upload
-                    return false;
-                  }}
-                >
-                  <Button>
-                    <Icon type="upload" /> Click to Upload
-                  </Button>
-                </Upload>
-                ;
-              </Form.Item> */}
 
               <Form.Item
                 name="age"
@@ -214,6 +167,22 @@ export const FormPage = () => {
                   options={RELATION}
                 />
               </Form.Item>
+              {/* <div className={styles.fileUpload}>
+                <label htmlFor="image">Загрузите изображение:</label>
+                <input
+                  id="image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                />
+                {image && (
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt="Preview"
+                    className={styles.imagePreview}
+                  />
+                )}
+              </div> */}
             </div>
           </div>
           <div className={styles.form}>

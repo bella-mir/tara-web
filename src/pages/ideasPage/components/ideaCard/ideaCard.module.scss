@@ -1,6 +1,6 @@
 .card {
   width: 420px;
-  height: 200px;
+  height: 220px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -40,4 +40,13 @@
     white-space: nowrap;
     width: 100%;
   }
+}
+
+.likeSection {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: end;
+  // margin: 1rem 0;
 }

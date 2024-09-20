@@ -15,8 +15,6 @@ import nature from "../asserts/iconsNew/nature.svg";
 import medicine from "../asserts/iconsNew/medicine.svg";
 import other from "../asserts/iconsNew/other.svg";
 
-// export const API_URL = "https://xn-----8kcnbetcdkli0enad2ac7t.xn--p1ai/api";
-
 export const TITLE = {
   name: "Идеи для Города",
   isTitle: true,

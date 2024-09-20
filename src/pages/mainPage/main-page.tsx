@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import cn from "classnames";
 import {
   CollapsibleBlock,
   Container,
@@ -7,20 +6,16 @@ import {
   Timeline,
 } from "../../components";
 import styles from "./main-page.module.scss";
-import { STAGES, TEAM_MEMBERS } from "./main-page-constants";
+import { EVENTS, STAGES, TEAM_MEMBERS } from "./main-page-constants";
 import { About } from "./about";
 import vk from "../../asserts/logos/vk_blue.svg";
 import tg from "../../asserts/logos/tg_blue.svg";
-import goncharov from "./asserts/goncharov.jpg";
-import finogenov from "./asserts/finogenov.jpg";
-import lysenkov from "./asserts/lysenkov.jpeg";
-import shipilenko from "./asserts/shpilenko.jpg";
-import taraEvent from "../../asserts/Tara_event2.png";
-import taraEvent2 from "../../asserts/tara_discuss.jpeg";
-import taraEvent4 from "../../asserts/tara_event4.png";
-import taraEvent3 from "../../asserts/tara_heritage.png";
+import goncharov from "./asserts/team/goncharov.jpg";
+import finogenov from "./asserts/team/finogenov.jpg";
+import lysenkov from "./asserts/team/lysenkov.jpeg";
+import shipilenko from "./asserts/team/shpilenko.jpg";
 import { useEffect } from "react";
-import { TeamMembersList } from "./components ";
+import { EventCardList, TeamMembersList } from "./components ";
 
 export const MainPage = () => {
   const { hash } = useLocation();
@@ -214,7 +209,6 @@ export const MainPage = () => {
       </Container>
       <Container className={styles.blockTeam}>
         <h2 className={styles.blockTitle}>Команда проекта</h2>
-
         <TeamMembersList members={TEAM_MEMBERS} />
       </Container>
       <Container>
@@ -229,37 +223,48 @@ export const MainPage = () => {
       <Container className={styles.blockParticipation}>
         <div className={styles.block} id="particip">
           <h2 className={styles.blockTitle}>Участие в проекте</h2>
+          <h3>Как тарчане могут высказать свое мнение?</h3>
           <div className={styles.blockText}>
-            "На все этапах разработка мастер-плана — открытый процесс,
-            участником которого может стать каждый тарчанин. Ведь именно вы
-            живете в городе, каждый день ходите по его улицам, работаете,
-            отдыхаете, учитесь, растите детей, имеете свои мечты и мысли о том,
-            что стоит изменить. Цель участия – сформировать открытое задание на
-            мастер-план города.
+            «Участником проекта мастер-плана Тары может стать каждый тарчанин.
+            Ведь вы хорошо знаете город, каждый день ходите по его улицам,
+            работаете, отдыхаете, учитесь, растите детей, у вас есть мечты и
+            мысли о том, что стоит изменить. Участвуя в проекте, вы фиксируете
+            свои предложения для будущего Тары в открытом задании на разработку
+            мастер-плана.
             <p>
-              Совместная работа над заданием познакомит разные группы активных
-              горожан между собой, поможет наладить новые связи и станет
-              источником новых инициатив. А также это один из способов наладить
-              диалог горожан с администрацией и выявить запросы в нескольких
-              сферах.
+              Во время совместной работы над таким заданием, мы бы хотели ближе
+              познакомиться с разными активными группами тарчан, наладить новые
+              связи между разными инициативами, а также использовать этот
+              проект, чтобы наладить диалог горожан с администрацией.
             </p>
             <p>
               Пройти опрос, оставить предложение на карте, прийти на экскурсию
-              по городу с разработчиками, стать участников мероприятий «Недели
-              мастер-плана» и предложить свое видение будущего Тары — выбирайте
-              свой способ участия и присоединяйтесь к команде проекта. Итоги
-              этой работы и станут заданием для разработчиков мастер-плана."
+              по городу с разработчиками, стать участников конференции или одной
+              из проектных встреч — выбирайте свой способ участия и
+              присоединяйтесь к команде проекта. Итоги обсуждений и опросов
+              «Недели мастер-плана» станут заданием для разработчиков из Высшей
+              школы экономики»
             </p>
-            <p>Илья Севастьянов, партнер команды Городрешает.рф</p>
+            <p>
+              Илья Севастьянов, партнер команды{" "}
+              <a href="https://xn--80afdeb4capcx7d.xn--p1ai/" target="_blank">
+                Городрешает.рф
+              </a>
+            </p>
           </div>
-          <h3>Как тарчане могут высказать свое мнение?</h3>
+          <h3>Открытые события «Недели мастер-плана» 17 – 20 сентября</h3>
+          <EventCardList events={EVENTS} />
+          <h3>Пройти опрос или оставить предложение на карте</h3>
           <div className={styles.cards}>
             <div className={styles.card}>
               <span className={styles.cardTime}>2 – 28 сентября</span>
               <span className={styles.cardTitle}>Онлайн опрос</span>
               <span className={styles.cardDescription}>
-                Результаты будут опубликованы и использованы для составления
-                задания на разработку мастер-плана
+                Анонимный онлайн-опрос, который поможет понять, какие изменения
+                нужны в Таре, увидеть сильные и слабые стороны Тары, её болевые
+                точки, вещи, над которыми стоит поработать в первую очередь,
+                глазами жителей. Результаты будут опубликованы и использованы
+                для составления задания на разработку мастер-плана
               </span>
               <Link
                 to="https://forms.gle/aLD9HcHRuQA2eBfH8"
@@ -286,117 +291,6 @@ export const MainPage = () => {
               </Link>
             </div>
           </div>
-          <h3>Недели мастер-плана в Таре (9 сентября – 23 октября)</h3>
-          <div className={styles.cards}>
-            <div className={cn(styles.card, styles.cardEvent)}>
-              <img src={taraEvent3} className={styles.cardImage}></img>
-              <span className={styles.cardTime}>17 сентября, 16:00</span>
-              <span className={styles.cardTitle}>
-                Экскурсия «Тара – музей под открытым небом»
-              </span>
-              <span className={styles.cardDescription}>
-                Пройдем по маршруту знаковых памятников архитектуры на Ленина -
-                Дзержинского - Спасская - Карбышева - Советская -
-                Александровская - Избышева. Цель – обсудить наследие города и
-                осмотреть в каком состоянии находятся памятники архитектуры и
-                как следует их сохранять
-                <p>
-                  Ведущие: историк Денис Сугоняк (Тарский уезд) и Василий
-                  Александров (администрация)
-                </p>
-              </span>
-              <Link
-                to="https://forms.gle/8tvhLF9jBjshJtBx5"
-                target="_blank"
-                className={cn(styles.cardButton, styles.cardButton2)}
-              >
-                Записаться
-              </Link>
-            </div>
-
-            <div className={styles.card}>
-              <img src={taraEvent4} className={styles.cardImage}></img>
-              <span className={styles.cardTime}>19 сентября, 18:00</span>
-              <span className={styles.cardTitle}>
-                Экскурсия «Общественные пространства до и после благоустройства»
-              </span>
-              <span className={styles.cardDescription}>
-                Пройдем по маршруту пл. Юбилейная - пл. Ленина - Пушкинский
-                сквер - Парк культуры и отдыха - Никольский дворик - пл. Победы
-                - ул. Ленина. Цель – разобраться, как благоустройство меняет
-                жизнь горожан, какие есть успешные примеры и проблемы при
-                реализации проектов.
-                <p>
-                  Ведущая Римма Баженова, руководитель отдела архитектуры и
-                  благоустройства администрации города
-                </p>
-              </span>
-              <Link
-                to="https://forms.gle/AQrnTQRvVvC9bJZZ7"
-                target="_blank"
-                className={cn(styles.cardButton, styles.cardButton2)}
-              >
-                Записаться
-              </Link>
-            </div>
-
-            <div className={styles.card}>
-              <img
-                src={taraEvent2}
-                className={cn(styles.cardImage, styles.cardImageCentered)}
-              ></img>
-              <span className={styles.cardTime}>
-                18 сентября, 15:30 – 21:00{" "}
-              </span>
-              <span className={styles.cardTitle}>
-                Конференция «Ценности, риски развития и видение будущего Тары»
-              </span>
-              <span className={styles.cardDescription}>
-                Приглашаем вас вместе подумать о будущем Тары и определить
-                требования к мастер плану. На конференции тарчане определят
-                ценности, а затем в соответствии с ними предложат свои варианты
-                видения будущего Тары. Проектировщики и работники администрации
-                послушают эти идеи и положат их в основу задания на разработку
-                мастер-плана.
-                <p>Место проведения: КДЦ «Север»</p>
-              </span>
-              <Link
-                to="https://forms.gle/miwGLkZbmn8HTt5W6"
-                target="_blank"
-                className={cn(styles.cardButton, styles.cardButton2)}
-              >
-                Записаться
-              </Link>
-            </div>
-
-            <div className={styles.card}>
-              <img
-                src={taraEvent}
-                className={cn(styles.cardImage, styles.cardImageCentered)}
-              ></img>
-              <span className={styles.cardTime}>19 сентября 15:00 – 17:00</span>
-              <span className={styles.cardTitle}>
-                Круглый стол «Бизнес в Таре: ограничения и перспективы развития»
-              </span>
-              <span className={styles.cardDescription}>
-                Приглашаем предпринимателей, владельцев больших и малых
-                предприятий на круглый стол, цель которого обсудить преимущества
-                и риски ведения производства и другой коммерческой деятельности
-                в городе, существующие и потенциальные формы поддержки бизнеса,
-                необходимость диалога с образовательными учреждениями, а также
-                перспективные направления работы с предпринимателями в рамках
-                создания мастер-плана.
-                <p>Место проведения: КДЦ «Север»</p>
-              </span>
-              <Link
-                to="https://forms.gle/LR5z1pESjdk1DWfs5"
-                target="_blank"
-                className={cn(styles.cardButton, styles.cardButton2)}
-              >
-                Записаться
-              </Link>
-            </div>
-          </div>
         </div>
       </Container>
       <Container className={styles.blockStages}>
@@ -406,8 +300,8 @@ export const MainPage = () => {
         <div className={styles.rowSocials}>
           <p className={styles.blockText}>
             Подпишитесь на наши социальные сети, чтобы быть в курсе событий
-            проекта и узнавать о публикациях исследований, итогов публичных
-            встреч и других материалов проекта:
+            проекта и узнавать о публикациях исследований, итогах публичных
+            встреч и других материалах проекта
           </p>
           <div className={styles.links}>
             <Link to="https://vk.com/tara_strategy" target="_blank">

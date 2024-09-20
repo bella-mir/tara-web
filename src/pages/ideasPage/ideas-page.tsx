@@ -8,6 +8,7 @@ import styles from "./ideas-page.module.scss";
 import { Alert, Badge, Select } from "antd";
 import { CATEGORIES_AND_ALL } from "../../utils/app-constants";
 import { useSelector } from "react-redux";
+import { IIdeaState } from "../../app/types";
 
 export const IdeasPage = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,7 @@ export const IdeasPage = () => {
 
   return (
     <>
-      <Container>
+      <Container className={styles.container}>
         <div className={styles.title}>
           <h2>Ваши идеи</h2>
 
@@ -51,8 +52,8 @@ export const IdeasPage = () => {
               />
               <div className={styles.cards}>
                 {ideasToShow && ideasToShow?.length > 0 ? (
-                  ideasToShow.map((item: any, i: number) => (
-                    <IdeaCard card={item} key={i} />
+                  ideasToShow.map((item: IIdeaState, i: number) => (
+                    <IdeaCard cardId={item._id} key={i} />
                   ))
                 ) : (
                   <Alert

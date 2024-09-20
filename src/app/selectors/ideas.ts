@@ -10,9 +10,8 @@ export const getLoadStatus = createSelector(
   (state) => state.status
 );
 
-export const getAllIdeas = createSelector(
-  getIdeasState,
-  (state) => state.ideas
+export const getAllIdeas = createSelector(getIdeasState, (state) =>
+  state.ideas?.slice().reverse()
 );
 
 export const getConfirmedIdeas = createSelector(getAllIdeas, (ideas) =>
@@ -35,4 +34,31 @@ export const getSelectedPoints = createSelector(getConfirmedIdeas, (ideas) =>
       coordinates: [idea.coordinates.lng, idea.coordinates.lat],
     },
   }))
+);
+
+export const getIdeaById = createSelector(
+  //@ts-ignore
+  [getAllIdeas, (state: RootState, id: string) => id],
+  (ideas, id) => {
+    return ideas?.find((idea: IIdeaState) => idea._id === id);
+  }
+);
+
+export const getIsSelectedById = createSelector(
+  //@ts-ignore
+  [getAllIdeas, (state: RootState, id: string) => id],
+  (ideas, id) => {
+    const user = localStorage.getItem("user");
+    const idea = ideas?.find((idea: IIdeaState) => idea._id === id);
+    return user && idea?.likes?.includes(user);
+  }
+);
+
+export const getCardLikes = createSelector(
+  //@ts-ignore
+  [getAllIdeas, (state: RootState, id: string) => id],
+  (ideas, id) => {
+    const idea = ideas?.find((idea: IIdeaState) => idea._id === id);
+    return idea?.likes?.length || 0;
+  }
 );

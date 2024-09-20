@@ -1,0 +1,76 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 24px;
+
+  .card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 460px;
+    // cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    // background-color: #ebd1a1;
+    .cardTime {
+      align-self: end;
+      margin-bottom: 1rem;
+      font-style: italic;
+      font-size: 14px;
+    }
+    .cardTitle {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cardButton {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: fit-content;
+      text-align: right;
+      background-color: rgba(79, 170, 101, 0.8);
+      color: white;
+      align-self: flex-end;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin-top: auto;
+    }
+
+    .cardButton2 {
+      background-color: rgba(212, 163, 57, 1);
+    }
+
+    .cardImage {
+      margin: -1rem -2rem -2rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      object-fit: cover;
+      z-index: 11;
+      height: fit-content;
+      height: 200px;
+      margin-bottom: 1rem;
+      object-position: top left;
+      max-width: calc(100% + 4rem);
+    }
+
+    .cardImageCentered {
+      object-position: center;
+    }
+    .cardDescription {
+      margin-bottom: 1rem;
+    }
+  }
+
+  // .cardEvent {
+  //   background-color: #c4d4f2;
+  // }
+}
+
+.cardButton:hover {
+  transform: scale(1.03);
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
